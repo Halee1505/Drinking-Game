@@ -2,7 +2,12 @@ body {
     width: 100%;
     height: max-content;
     margin: 0px;
-
+    -moz-user-select: none !important;
+    -webkit-touch-callout: none!important;
+    -webkit-user-select: none!important;
+    -khtml-user-select: none!important;
+    -moz-user-select: none!important;
+    -ms-user-select: none!important;
 }
 
 .content {
@@ -13,16 +18,60 @@ body {
     justify-content: space-around;
     align-items: center;
 }
+.main_content {
+    width: 100%;
+    height: 986px;
+    background: linear-gradient(90deg, rgba(14, 21, 127, 1) 35%, rgba(16, 40, 84, 1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.value{
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.upbai{
+    height: max-content;
+    width: max-content;
+    margin-top: 50px;
+    border-radius: 18px;
+    border: 1px solid rgb(200, 34, 209);
+}
+.upbai p{
+    font-size: 60px;
+    margin: 0px;
+    padding: 10px 10px;
+}
+.value{
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#value1{
+    transform: rotate(90deg);
+}
+#value2{
+    transform: rotate(-90deg);
+}
 
 .card {
-    height: 600px;
-    width: 450px;
+    height: 700px;
+    width: 525px;
     border-radius: 18px;
     box-shadow: 0px 0px 4px 4px #ff5b5b;
     cursor: pointer;
 }
 
 #back_card{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
     border-radius: 18px;
     height: 96%;
     width: 96%;
@@ -32,6 +81,9 @@ body {
     animation-timing-function: ease-in;
 }
 #front_card{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
     border-radius: 18px;
     height: 96%;
     width: 96%;
@@ -39,13 +91,29 @@ body {
     animation-duration: 0.25s;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#front_card p{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    height: 60%;
+    width: 70%;
+    font-weight: 600;
+    font-style: normal;
+    font-family:monospace;
+    text-shadow: 3px 3px 3px #000;
 }
 
 .btn-overlay {
     cursor: pointer;
-    height: 200px;
-    width: 200px;
-    border-radius: 100px;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
     background: linear-gradient(90deg, rgba(248, 110, 185, 1) 0%, rgba(140, 73, 170, 1) 50%, rgb(41, 70, 157) 100%);
     animation-name: rota;
     animation-duration: 2s;
@@ -59,9 +127,9 @@ body {
 
 .btn {
     position: relative;
-    height: 190px;
-    width: 190px;
-    border-radius: 100px;
+    height: 380px;
+    width: 380px;
+    border-radius: 50%;
     background: linear-gradient(90deg, rgba(14, 21, 127, 1) 35%, rgba(16, 40, 84, 1) 100%);
     display: flex;
     justify-content: center;
@@ -70,15 +138,12 @@ body {
 p{
     cursor: pointer;
     color:rgb(209, 45, 250);
-    font-size: 40px;
+    font-size: 100px;
     font-weight: 600;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .btn:active {
-    height: 190px;
-    width: 190px;
-    border-radius: 100px;
-    box-shadow: 0px 0px 15px 7px #71ff51;
+    box-shadow: 0px 0px 5px 7px #71ff51;
 }
 
 @keyframes rota {
