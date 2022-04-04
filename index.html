@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="src/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Drinking Game</title>
+</head>
+
+<body>
+    <div class="content">
+        <div class="btn-overlay">
+            <div class="btn" id="btn_left">
+                <p>Flip card</p>
+            </div>
+        </div>
+        <div class="card" id="card">
+            <img id="back_card" src="src/back.jpg" alt="">
+        </div>
+        <div class="btn-overlay">
+            <div class="btn" id="btn_right">
+                <p>Flip card</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    document.getElementById("btn_left").onclick = function() {
+        ActiveFlipCard();
+    }
+    document.getElementById("btn_right").onclick = function() {
+        ActiveFlipCard();
+    }
+    document.getElementById("card").onclick = function() {
+        ResetCard();
+    }
+</script>
+<script>
+    function ActiveFlipCard(){
+        document.getElementById("back_card").style.animationName = "flip_card";
+        setTimeout(function() {
+            document.getElementById("back_card").style.animationName = "none";
+            document.getElementsByClassName("card")[0].innerHTML = "<img id='front_card' src='src/front.jpg' />";
+            document.getElementById("front_card").style.animationName = "flip_card1";
+            setTimeout(function() {
+                document.getElementById("front_card").style.animationName = "none";
+            }, 250);
+        }, 250);
+
+
+    }
+
+    function ResetCard(){
+        document.getElementById("front_card").style.animationName = "flip_card";
+        setTimeout(function() {
+            document.getElementById("front_card").style.animationName = "none";
+            document.getElementsByClassName("card")[0].innerHTML = "<img id='back_card' src='src/back.jpg' />";
+            document.getElementById("back_card").style.animationName = "flip_card1";
+            setTimeout(function() {
+                document.getElementById("back_card").style.animationName = "none";
+            }, 250);
+        }, 250);
+    }
+</script>
+
+</html>
